@@ -1,7 +1,7 @@
 fn main() {
     let mut out = Vec::new();
-    let r = Series(vec!(Real(5.0), Parallel(vec!(Real(8.0), Series(vec!(Real(7.0), Parallel(vec!(Real(6.0), Real(3.0), Real(2.0)))))))));
-    info(12.0, 12.0/resistance(&r), &mut out, &r);
+    let r = Parallel(vec!(Series(vec!(Real(10.0), Real(10.0))), Real(10.0)));
+    info(9.0, 9.0/resistance(&r), &mut out, &r);
     for i in out {
         println!("{} {}", i.0, i.1)
     }
